@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <?php
-session_start(); 
+session_start();
 @$con = mysql_connect("localhost","root","");
 if (!$con)
   {
@@ -81,7 +81,7 @@ else{
 <legend  style="font-weight:bold">发表</legend>
 <td>Title: <input type="text" name="title" style="width:97%;"/></td>
 </br>
-<td>Content: <input type="text" class="content"/></td>
+<td>Content: <input type="text" class="content" name="content"/></td>
 </br>
 <td><input type="submit" value="Submit" /></td>
 </form>
