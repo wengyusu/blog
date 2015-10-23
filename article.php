@@ -10,7 +10,7 @@ if (!$con)
   mysql_select_db("blog",$con);
   $sql="select * from article where title='$title'";
   $result=mysql_query($sql); 
-  $row=mysql_fetch_array($result)
+  $row=mysql_fetch_array($result);
 ?>
 <html>
 <head>
