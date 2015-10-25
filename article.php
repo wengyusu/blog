@@ -2,12 +2,7 @@
 session_start(); 
 $title = $_GET["title"];
 @$con = mysql_connect("localhost","root","");
-if (!$con)
-  {
-  die('error' . mysql_error());
-  }
-  
-  mysql_select_db("blog",$con);
+include 'datebase.php';
   $sql="select * from article where title='$title'";
   $result=mysql_query($sql); 
   $row=mysql_fetch_array($result);

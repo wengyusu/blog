@@ -14,13 +14,7 @@ if($choice=="n")
 }
 else
 {
-	@$con = mysql_connect("localhost","root","");
-if (!$con)
-  {
-  die('error' . mysql_error());
-  }
-  
-  mysql_select_db("blog",$con);
+	include 'datebase.php';
   mysql_query("DELETE FROM article WHERE title='$title'");
   mysql_close($con);
   

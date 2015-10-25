@@ -7,13 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = test_input($_POST["password"]);
 }
 
-$con = mysql_connect("localhost","root","");
-if (!$con)
-  {
-  die('error' . mysql_error());
-  }
-  
-  mysql_select_db("blog",$con);
+include 'datebase.php';
   
   $result = mysql_query("SELECT * FROM user
 WHERE username='.$username.' and password='.$password.'");

@@ -1,13 +1,7 @@
 ﻿<!DOCTYPE html>
 <?php
 session_start();
-@$con = mysql_connect("localhost","root","");
-if (!$con)
-  {
-  die('error' . mysql_error());
-  }
-  
-  mysql_select_db("blog",$con);
+include 'datebase.php';
   $sql="select title from article";
   $result=mysql_query($sql); 
   
