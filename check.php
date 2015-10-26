@@ -1,6 +1,7 @@
 <?php
-session_start(); 
-$name = $email = $gender = $comment = $website = "";
+session_start();
+$name = $password = "";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = test_input($_POST["username"]);
@@ -14,6 +15,7 @@ WHERE username='.$username.' and password='.$password.'");
 
 if(!$result) {
 	echo "用户名或密码错误！";
+	header("Location: index.php"); 
 }
 else
 {

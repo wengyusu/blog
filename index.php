@@ -30,6 +30,7 @@ Welcome!
 if(!isset($_SESSION['username']))
 {
 	echo "                          <a href='login.php'>登录</a>";
+	echo "                          <a href='regist.html'>注册</a>";
 }
 else{
 	echo "<span>$_SESSION[username]</span>";

@@ -18,8 +18,8 @@ if (!mysql_query($sql,$con))
   {
   die('Error: ' . mysql_error());
   }
-  
-  header('Refresh: 1; url=index.php');
   echo "Success";
+  header('Refresh: 1; url=index.php');
+  
   
 ?>
