@@ -1,0 +1,23 @@
+ul.nav {
+	margin-left: 0px;
+	padding-left: 0px;
+	list-style: none;
+	border-bottom: 1px dashed #000;
+	overflow: hidden;
+	zoom: 1;
+}
+ul.nav li {
+	float: left;
+}
+ul.nav a {
+	width:12em;
+	display:block;
+	border: 1px dashed #000;
+	border-bottom: none;
+	padding: 5px;
+	margin-right: 5px;
+	background-color: #404040;
+	text-decoration:none;
+	color: #63B8FF;
+	text-align: center;
+}

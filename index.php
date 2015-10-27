@@ -21,6 +21,7 @@ bottom:10px;
 
 }
 </style>
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <title>Wind's Blog</title>
 <body>
@@ -40,15 +41,15 @@ else{
 </br>
 </br>
 
-<tr>
-
-<h2 align="center">文章列表</h2>
+<ul class="nav">
+<li><a href="index.php">首页</a></li>
+<li><a href="liuyan.php">留言板</a></li>
+</ul>
 </br>
-
-</tr>
-
+</br>
+</br>
+<div>
 <tr>
-
 <ul>
 <?php 
   while($row=mysql_fetch_array($result))
@@ -63,7 +64,7 @@ else{
 
 
 </tr>
-
+</div>
 </br>
 </br>
 </br>
