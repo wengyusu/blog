@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2015-10-06 15:10:54
+-- Generation Time: 2015-10-28 05:51:14
 -- 服务器版本： 5.6.17
 -- PHP Version: 5.5.12
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `blog`
 --
+CREATE DATABASE IF NOT EXISTS `blog` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `blog`;
 
 -- --------------------------------------------------------
 
@@ -32,13 +34,20 @@ CREATE TABLE IF NOT EXISTS `article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- 插入之前先把表清空（truncate） `article`
+--
+
+TRUNCATE TABLE `article`;
+--
 -- 转存表中的数据 `article`
 --
 
 INSERT INTO `article` (`title`, `content`) VALUES
 ('test', 'test'),
 ('123', '123'),
-('1234', '123');
+('1234', '123'),
+('1111', '1111'),
+('ä¸­æ–‡æµ‹è¯•', 'ä¸­æ–‡');
 
 -- --------------------------------------------------------
 
@@ -52,11 +61,17 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- 插入之前先把表清空（truncate） `user`
+--
+
+TRUNCATE TABLE `user`;
+--
 -- 转存表中的数据 `user`
 --
 
 INSERT INTO `user` (`username`, `password`) VALUES
-('admin', 'admin');
+('admin', 'admin'),
+('.wind.', '.admin.');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

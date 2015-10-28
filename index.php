@@ -16,7 +16,6 @@ include 'datebase.php';
     height: 140px;
 }
 .footer {
-
 bottom:10px;  
 
 }
