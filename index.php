@@ -9,7 +9,7 @@ include 'datebase.php';
 
 <html>
 <head>
-<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 <style type="text/css"> 
 .content {
     width: 97%;
@@ -73,12 +73,14 @@ else{
 </br>
 <div class="footer">
 <form name="input" action="artsub.php" method="post">
+<fieldset>
 <legend  style="font-weight:bold">发表</legend>
 <td>Title: <input type="text" name="title" style="width:97%;"/></td>
 </br>
 <td>Content: <input type="text" class="content" name="content"/></td>
 </br>
 <td><input type="submit" value="Submit" /></td>
+</fieldset>
 </form>
 </div>
 </body>

@@ -21,3 +21,14 @@ ul.nav a {
 	color: #63B8FF;
 	text-align: center;
 }
+
+body {
+			margin:0;
+			padding:0;
+			background:#8B8578 url(gradient_bg.png) 0 100px repeat-x;
+			font-family:Verdana;
+			font-size:8pt;
+			overflow:hidden;
+			font-family:sans-serif,helvetica;
+			font-size:0.9em;
+		}

@@ -8,7 +8,8 @@ include 'datebase.php';
 ?>
 <html>
 <head>
-<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <title>Wind's Blog</title>
 <body>
