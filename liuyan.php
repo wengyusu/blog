@@ -12,23 +12,20 @@ include 'datebase.php';
     width: 97%;
     height: 140px;
 }
-.footer {
-bottom:10px;  
 
-}
 </style>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <title>Wind's Blog</title>
-<body>
+<body style="overflow-y:scroll;">
 <?php
 if(!isset($_SESSION['username']))
 {
 	echo "                          <a href='login.php'>登录</a>";
 }
 else{
-	echo "<span>welcome,$_SESSION[username]</span>";
-	echo "<a href='logout.php'>                         注销</a>";
+	echo "<span>$_SESSION[username]</span>";
+	echo "                          <a href='logout.php'>注销</a>";
 }
 ?>
 <ul class="nav">
@@ -55,8 +52,9 @@ else{
  <?php 
   while($row=mysql_fetch_array($result))
   {
-	    echo "<li align='center'>$row[name]</li>"; 
-		echo "<li align='center'>$row[content]</li>"; 
+	    echo "<h3 align='center'>From:$row[name]</h3>"; 
+		echo "<h4 align='center'>$row[content]</h4>"; 
+echo "</br>";
   }
  ?>
  </ul>
