@@ -15,7 +15,7 @@ WHERE username='.$username.' and password='.$password.'");
 
 if(!$result) {
 	echo "用户名或密码错误！";
-	header("Location: index.php"); 
+	header("Location: login.php"); 
 }
 else
 {

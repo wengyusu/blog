@@ -7,62 +7,64 @@ include 'datebase.php';
   
 ?>
 
-<html>
+<html lang="zh-CN">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
-<style type="text/css"> 
-.content {
-    width: 97%;
-    height: 140px;
-}
-.footer {
-bottom:10px;  
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<style>
+#id {
+  position: fixed;
+  bottom: 0;
 }
 </style>
-<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <title>Wind's Blog</title>
-<body>
-Welcome! 
+<body class="container-fluid">
+<div class="rows">
 <?php
-
 if(!isset($_SESSION['username']))
 {
-	echo "                          <a href='login.php'>登录</a>";
-	echo "                          <a href='regist.html'>注册</a>";
+	echo "<div class='btn-group col-xs-offset-2' role='group' aria-label='...'>";
+	echo "<a type='button' class='btn btn-default' href='login.php'>登录</a>";
+	echo "<a type='button' class='btn btn-default' href='regist.html'>注册</a>";
+	echo "</div>";
 }
 else{
-	echo "<span>$_SESSION[username]</span>";
-	echo "                          <a href='logout.php'>注销</a>";
+	echo "<div class='btn-group col-xs-offset-2' role='group' aria-label='...'>";
+	echo "<a type='button' class='btn btn-default col-xs-offset-2' href='logout.php'>注销</a>";
 }
 ?>
+</div>
 </br>
 </br>
-
-<ul class="nav">
-<li><a href="index.php">首页</a></li>
-<li><a href="liuyan.php">留言板</a></li>
+<div class="rows">
+<ul class="nav nav-tabs col-xs-offset-2">
+<li role="prenstation"><a href="index.php">首页</a></li>
+<li role="prenstation"><a href="liuyan.php">留言板</a></li>
 </ul>
+</div>
 </br>
 </br>
 </br>
-<div>
-<tr>
-<ul>
+<div class="rows">
 <?php 
   while($row=mysql_fetch_array($result))
   {
-	    echo "<li><a href='article.php?title=$row[title]'>$row[title]</a></li>"; 
-
-	
+		echo "<div class='col-xs-offset-2'><a href='article.php?title=$row[title]'><h4>$row[title]</h4></a></div>"; 
   }
        
  ?>
- </ul>
-
-
-</tr>
 </div>
 </br>
 </br>
@@ -71,17 +73,23 @@ else{
 </br>
 </br>
 </br>
-<div class="footer">
-<form name="input" action="artsub.php" method="post">
-<fieldset>
-<legend  style="font-weight:bold">发表</legend>
-<td>Title: <input type="text" name="title" style="width:97%;"/></td>
-</br>
-<td>Content: <input type="text" class="content" name="content"/></td>
-</br>
-<td><input type="submit" value="Submit" /></td>
-</fieldset>
+<form class="form-horizontal" name="input" action="artsub.php" method="post">
+<div class="form-group">
+    <label class="col-xs-offset-2 control-label">Title</label>
+    <div class="col-xs-offset-2">
+      <input type="text" class="form-control" placeholder="Title" name="title">
+    </div>
+	</div>
+	<div class="form-group">
+	<label class="col-xs-offset-2 control-label">Content</label>
+	<div class="col-xs-offset-2">
+	<textarea class="form-control" placeholder="Content" name="content" rows="6"></textarea>
+	</div>
+	</div>
+	<div class="form-group">
+	<div class="col-xs-offset-2">
+      <button type="submit" class="btn btn-default">发表</button>
+    </div>
 </form>
-</div>
 </body>
 </html>
