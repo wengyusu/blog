@@ -64,17 +64,18 @@ else{
  </br>
  </br>
  </br>
- <div id="footer">
+<div class="panel panel-default col-xs-offset-2 col-xs-8">
+<div class="panel-heading">发表</div>
 <form class="form-horizontal" name="input" action="artsub.php" method="post">
 <div class="form-group">
     <label class="col-xs-2 control-label">Name</label>
-    <div class="col-xs-2">
+    <div class="col-xs-6">
       <input type="text" class="form-control" placeholder="name" name="name">
     </div>
 	</div>
 	<div class="form-group">
 	<label class="col-xs-2 control-label">Content</label>
-	<div class="col-xs-2">
+	<div class="col-xs-6">
 	<textarea class="form-control" placeholder="Content" name="content" rows="6"></textarea>
 	</div>
 	</div>

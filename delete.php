@@ -1,12 +1,14 @@
 <?php
   session_start(); 
+  $title=$_GET['title'];
   if(!isset($_SESSION['username']))
-  {
-	   header('Refresh: 1; url=index.php');
-	   exit("Please Login");
+  {	
+	   $data ="Please Login";
+	   header("Refresh: 1; url=index.php?title=$title");
+	   exit($data);
   }
-  
-$title=$_GET["title"];
+else
+{
 $choice=$_GET["choice"];
 if($choice=="n")
 {
@@ -19,6 +21,6 @@ else
   mysql_close($con);
   
   header('Refresh: 1; url=index.php');
-  echo "Success";
+}
 }
 ?>

@@ -13,17 +13,56 @@
 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<style>
-	.container {margin-top:15%;}
+	.container {margin-top:10%;}
 	</style>
 </head>
 <title>Login</title>
+
 <div class="container">
-	<form class="form-horizontal" name="input" action="check.php" method="post">
+	<div class="panel panel-default col-xs-8 col-xs-offset-2">
+	<div class="panel-heading">Login</div>
+	<form class="form-horizontal panel-body" name="input" action="" method="post">
+  <div class="rows">
   <div class="form-group">
     <label class="col-xs-4 control-label">Username</label>
     <div class="col-xs-4">
       <input type="text" class="form-control" placeholder="Username" name="username">
     </div>
+	<?php
+$username = $password = "";
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $username = test_input($_POST["username"]);
+  $password = test_input($_POST["password"]);
+
+include 'datebase.php';
+  
+  $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
+  $result = mysql_query($sql);
+  $row=mysql_fetch_array($result);
+  check($row);
+  mysql_close($con);
+}
+	function check($row)
+	{
+	if(!$row) {
+	echo "<span class='alert alert-warning' role='alert'>用户名或密码错误</span>";
+}
+else
+{
+	session_start();
+	$_SESSION['username']=$username;
+	header('location:index.php');
+}
+  }
+?>
+</div>
   </div>
   <div class="form-group">
     <label class="col-xs-4 control-label">Password</label>
@@ -37,5 +76,6 @@
     </div>
   </div>
 </form>
+</div>
 </div>
 </html>

@@ -19,7 +19,7 @@ else
 include 'datebase.php';
   
 mysql_query("INSERT INTO user (username,password) 
-VALUES ('.$username.','.$password.')");
+VALUES ('$username','$password')");
 
   
   mysql_close($con);

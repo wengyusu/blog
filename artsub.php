@@ -19,7 +19,7 @@ if (!mysql_query($sql,$con))
   die('Error: ' . mysql_error());
   }
   echo "Success";
-  header('Refresh: 1; url=index.php');
+  header('location:index.php');
   
   
 ?>

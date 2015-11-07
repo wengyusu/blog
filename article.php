@@ -1,4 +1,5 @@
-﻿<?php
+﻿<!DOCTYPE html>
+<?php
 session_start(); 
 $title = $_GET["title"];
 include 'datebase.php';
@@ -15,10 +16,21 @@ include 'datebase.php';
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-
+	<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script>
+	var confirm = "<div class='alert alert-warning' role='alert'>确认删除吗？</div></br></br>";
+	var yes = "<a type='button' class='btn btn-default' href='delete.php?title=$title&choice=y'>确认</a>"; 
+	var no = "<a type='button' class='btn btn-default' href='delete.php?title=$title&choice=n'>取消</a>";
+	$(document).ready(function(){
+  $("#delete").click(function(){
+  $(this).after(confirm,yes,no);
+   $("#delete").unbind('click');
+   }
+   );
+});
+	</script>
 </head>
 <title>Wind's Blog</title>
 <body class="container-fluid">
@@ -28,8 +40,7 @@ if(!isset($_SESSION['username']))
 {
 	echo "<div class='btn-group col-xs-offset-2' role='group' aria-label='...'>";
 	echo "<a type='button' class='btn btn-default' href='login.php'>登录</a>";
-	echo "<a type='button' class='btn btn-default' href='regist.html'>注册</a>";
-	echo "</div>";
+	echo "<a type='button' class='btn btn-default' href='regist.html'>注册</a></div>";
 }
 else{
 	echo "<div class='btn-group col-xs-offset-2' role='group' aria-label='...'>";
@@ -63,9 +74,7 @@ else{
    </br>
     </br>
 	 </br>
- <?php 
-echo "<a type='button' class='btn btn-default href='confirm.php?title=$row[title]'>删除</a>"; 
- ?>
+	<a type='button' class='btn btn-default' id="delete">删除</a> 
 </p>
 </body>
 </html>

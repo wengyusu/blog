@@ -31,6 +31,7 @@ include 'datebase.php';
 </head>
 <title>Wind's Blog</title>
 <body class="container-fluid">
+<h2 align="center">Wind's Blog</h2>
 <div class="rows">
 <?php
 if(!isset($_SESSION['username']))
@@ -42,6 +43,7 @@ if(!isset($_SESSION['username']))
 }
 else{
 	echo "<div class='btn-group col-xs-offset-2' role='group' aria-label='...'>";
+	echo "<span>$_SESSION[username]</span>";
 	echo "<a type='button' class='btn btn-default col-xs-offset-2' href='logout.php'>注销</a>";
 }
 ?>
@@ -61,7 +63,7 @@ else{
 <?php 
   while($row=mysql_fetch_array($result))
   {
-		echo "<div class='col-xs-offset-2'><a href='article.php?title=$row[title]'><h4>$row[title]</h4></a></div>"; 
+		echo "<div class='col-xs-offset-2'><a href='article.php?title=$row[title]'><h4>$row[title]</h4></a></div></br>"; 
   }
        
  ?>
@@ -73,7 +75,9 @@ else{
 </br>
 </br>
 </br>
-<form class="form-horizontal" name="input" action="artsub.php" method="post">
+<div class="panel panel-default col-xs-offset-2 col-xs-8">
+<div class="panel-heading">发表</div>
+<form class="form-horizontal col-xs-9" name="input" action="artsub.php" method="post">
 <div class="form-group">
     <label class="col-xs-offset-2 control-label">Title</label>
     <div class="col-xs-offset-2">
@@ -91,5 +95,6 @@ else{
       <button type="submit" class="btn btn-default">发表</button>
     </div>
 </form>
+</div>
 </body>
 </html>
