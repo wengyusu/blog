@@ -43,7 +43,7 @@ if(!isset($_SESSION['username']))
 }
 else{
 	echo "<div class='btn-group col-xs-offset-2' role='group' aria-label='...'>";
-	echo "<span>$_SESSION[username]</span>";
+	echo "<span type='button' class='btn btn-default'>$_SESSION[username]</span>";
 	echo "<a type='button' class='btn btn-default col-xs-offset-2' href='logout.php'>注销</a>";
 }
 ?>

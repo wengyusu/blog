@@ -9,7 +9,6 @@
   $content = $_POST["content"];
   
 include 'datebase.php';
-  
   $sql="INSERT INTO article (title, content)
 VALUES
 ('".$title."','".$content."')";

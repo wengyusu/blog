@@ -19,13 +19,13 @@
 <title>Login</title>
 
 <div class="container">
-	<div class="panel panel-default col-xs-8 col-xs-offset-2">
+	<div class="panel panel-default col-md-8 col-md-offset-2">
 	<div class="panel-heading">Login</div>
 	<form class="form-horizontal panel-body" name="input" action="" method="post">
   <div class="rows">
   <div class="form-group">
-    <label class="col-xs-4 control-label">Username</label>
-    <div class="col-xs-4">
+    <label class="col-md-4 control-label">Username</label>
+    <div class="col-md-4">
       <input type="text" class="form-control" placeholder="Username" name="username">
     </div>
 	<?php
@@ -46,32 +46,33 @@ include 'datebase.php';
   $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
   $result = mysql_query($sql);
   $row=mysql_fetch_array($result);
-  check($row);
-  mysql_close($con);
+  check($row,$con,$username);
 }
-	function check($row)
+	function check($row,$con,$username)
 	{
 	if(!$row) {
 	echo "<span class='alert alert-warning' role='alert'>用户名或密码错误</span>";
+	mysql_close($con);
 }
 else
 {
-	session_start();
-	$_SESSION['username']=$username;
+		session_start();
+	$_SESSION["username"]=$username;
 	header('location:index.php');
+	mysql_close($con);
 }
   }
 ?>
 </div>
   </div>
   <div class="form-group">
-    <label class="col-xs-4 control-label">Password</label>
-    <div class="col-xs-4">
+    <label class="col-md-4 control-label">Password</label>
+    <div class="col-md-4">
       <input type="password" class="form-control" placeholder="Password" name="password">
     </div>
   </div>
   <div class="form-group">
-    <div class="col-xs-offset-4 col-xs-4">
+    <div class="col-md-offset-4 col-md-4">
       <button type="submit" class="btn btn-default">Sign in</button>
     </div>
   </div>

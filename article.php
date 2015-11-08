@@ -38,26 +38,26 @@ include 'datebase.php';
 <?php
 if(!isset($_SESSION['username']))
 {
-	echo "<div class='btn-group col-xs-offset-2' role='group' aria-label='...'>";
+	echo "<div class='btn-group col-md-offset-2' role='group' aria-label='...'>";
 	echo "<a type='button' class='btn btn-default' href='login.php'>登录</a>";
 	echo "<a type='button' class='btn btn-default' href='regist.html'>注册</a></div>";
 }
 else{
-	echo "<div class='btn-group col-xs-offset-2' role='group' aria-label='...'>";
-	echo "<a type='button' class='btn btn-default col-xs-offset-2' href='logout.php'>注销</a>";
+	echo "<div class='btn-group col-md-offset-2' role='group' aria-label='...'>";
+	echo "<a type='button' class='btn btn-default col-md-offset-2' href='logout.php'>注销</a>";
 }
 ?>
 </div>
 </br>
 </br>
 <div class="rows">
-<ul class="nav nav-tabs col-xs-offset-2">
+<ul class="nav nav-tabs col-md-offset-2">
 <li role="prenstation"><a href="index.php">首页</a></li>
 <li role="prenstation"><a href="liuyan.php">留言板</a></li>
 </ul>
 </div>
 
-<h3 class=" rows col-xs-offset-2">
+<h3 class=" rows col-md-offset-2">
 <?php 
 	    echo "$row[title]"; 
 ?>
@@ -65,7 +65,7 @@ else{
   </br>
   </br>
 
- <p class="rows col-xs-offset-2">
+ <p class="rows col-md-offset-2">
  <?php
  echo "$row[content]";
  ?>

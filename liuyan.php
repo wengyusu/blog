@@ -24,32 +24,32 @@ include 'datebase.php';
 <?php
 if(!isset($_SESSION['username']))
 {
-	echo "<div class='btn-group col-xs-offset-2' role='group' aria-label='...'>";
+	echo "<div class='btn-group col-md-offset-2' role='group' aria-label='...'>";
 	echo "<a type='button' class='btn btn-default' href='login.php'>登录</a>";
 	echo "<a type='button' class='btn btn-default' href='regist.html'>注册</a>";
 	echo "</div>";
 }
 else{
-	echo "<div class='btn-group col-xs-offset-2' role='group' aria-label='...'>";
-	echo "<a type='button' class='btn btn-default col-xs-offset-2' href='logout.php'>注销</a>";
+	echo "<div class='btn-group col-md-offset-2' role='group' aria-label='...'>";
+	echo "<a type='button' class='btn btn-default col-md-offset-2' href='logout.php'>注销</a>";
 }
 ?>
 </div>
 </br>
 </br>
 <div class="rows">
-<ul class="nav nav-tabs col-xs-offset-2">
+<ul class="nav nav-tabs col-md-offset-2">
 <li role="prenstation"><a href="index.php">首页</a></li>
 <li role="prenstation"><a href="liuyan.php">留言板</a></li>
 </ul>
 </div>
-<h3 class="col-xs-offset-2">留言板</h3>
+<h3 class="col-md-offset-2">留言板</h3>
  <div class="rows">
  <?php 
   while($row=mysql_fetch_array($result))
   {
-	    echo "<div class='col-xs-offset-2'><h4>From:$row[name]</h4></div>"; 
-		echo "<p class='col-xs-offset-2'>$row[content]<p>"; 
+	    echo "<div class='col-md-offset-2'><h4>From:$row[name]</h4></div>"; 
+		echo "<p class='col-md-offset-2'>$row[content]<p>"; 
 		echo "</br>";
   }
  ?>
@@ -64,23 +64,23 @@ else{
  </br>
  </br>
  </br>
-<div class="panel panel-default col-xs-offset-2 col-xs-8">
+<div class="panel panel-default col-md-offset-2 col-md-8">
 <div class="panel-heading">发表</div>
 <form class="form-horizontal" name="input" action="artsub.php" method="post">
 <div class="form-group">
-    <label class="col-xs-2 control-label">Name</label>
-    <div class="col-xs-6">
+    <label class="col-md-2 control-label">Name</label>
+    <div class="col-md-6">
       <input type="text" class="form-control" placeholder="name" name="name">
     </div>
 	</div>
 	<div class="form-group">
-	<label class="col-xs-2 control-label">Content</label>
-	<div class="col-xs-6">
+	<label class="col-md-2 control-label">Content</label>
+	<div class="col-md-6">
 	<textarea class="form-control" placeholder="Content" name="content" rows="6"></textarea>
 	</div>
 	</div>
 	<div class="form-group">
-	<div class="col-xs-offset-2 col-xs-2">
+	<div class="col-md-offset-2 col-md-2">
       <button type="submit" class="btn btn-default">发表</button>
     </div>
 	</div>

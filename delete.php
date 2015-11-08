@@ -20,7 +20,7 @@ else
   mysql_query("DELETE FROM article WHERE title='$title'");
   mysql_close($con);
   
-  header('Refresh: 1; url=index.php');
+  header('location:index.php');
 }
 }
 ?>
